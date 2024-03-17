@@ -1,5 +1,7 @@
 #include<iostream>
-#include<string> // подключение заголовочных файлов
+#include<string>
+#include<locale>
+#include<Windows.h> // подключение заголовочных файлов
 using namespace std; // пространство имен std
 void ChangingCase(string ss) { // функция изменения регистра
 	cout << "To lower case: ";
@@ -15,9 +17,12 @@ void ChangingCase(string ss) { // функция изменения регистра
 }
 
 int main() {
+	SetConsoleCP(1251); // задаем кодировку
+	SetConsoleOutputCP(1251);
+	locale ru{ "ru_RU.UTF-8" }; // локализация Ру
 	string ss = "";
 	cout << "Enter the string: ";
-	getline(cin, ss);
+	getline(cin, ss); // ввод строки
 	ChangingCase(ss);
 	return 0;
 }
