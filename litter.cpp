@@ -1,13 +1,13 @@
-?#include<string> 
+#include<string> 
 #include <iostream> 
 #include <Windows.h> 
 using namespace std;
 int vowelCount(string str) {
     int kolCount = 0;
-    // ‘―¨α®ª £« α­λε
-    string lettersLower = { 'a','e','u','o','i','y',' ','¥','ρ','¨','γ','®','ν','ξ','ο','λ' };
-    string lettersUp = { '€','…','π','','“','','','','','›','A','E','U','O','I','Y' }; 
-    // –¨ª« ―®¨αª  £« α­λε
+    // β€Β―Β¨Γ΅Β®Βª Β£Β«Β Γ΅Β­Γ«Γ¥
+    string lettersLower = { 'a','e','u','o','i','y','Β ','Β¥','Γ±','Β¨','Γ£','Β®','Γ­','Γ®','Γ―','Γ«' };
+    string lettersUp = { 'β‚¬','β€¦','Γ°','Λ†','β€','Ε½','Β','ΕΎ','ΕΈ','β€Ί','A','E','U','O','I','Y' }; 
+    // β€“Β¨ΒªΒ« Β―Β®Β¨Γ΅ΒªΒ  Β£Β«Β Γ΅Β­Γ«Γ¥
     for (int i = 0; i < str.length(); i++) {
         for (int j = 0; j < lettersUp.length(); j++) {
             if (str[i] == lettersLower[j] || str[i] == lettersUp[j]) {
@@ -20,14 +20,14 @@ int vowelCount(string str) {
 }
 int main()
 {
-    // ®¤ª«ξη¥­¨¥ ΰγααª®£® ο§λª 
+    // ΒΒ®Β¤ΒªΒ«Γ®Γ§Β¥Β­Β¨Β¥ Γ Γ£Γ΅Γ΅ΒªΒ®Β£Β® Γ―Β§Γ«ΒªΒ 
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     string str = "";
-    cout << "‚Ά¥¤¨β¥ αβΰ®ªy: " << endl;
-    // ‚Ά®¤ αβΰ®ª¨ 
+    cout << "β€ΒΆΒ¥Β¤Β¨ΓΆΒ¥ Γ΅ΓΆΓ Β®Βªy: " << endl;
+    // β€ΒΆΒ®Β¤ Γ΅ΓΆΓ Β®ΒªΒ¨ 
     getline(cin, str);
     int kolCount = vowelCount(str);
-    cout << "‚ αβΰ®ª¥ " << kolCount << " £« α­λε ΅γªΆ";
+    cout << "β€ Γ΅ΓΆΓ Β®ΒªΒ¥ " << kolCount << " Β£Β«Β Γ΅Β­Γ«Γ¥ Β΅Γ£ΒªΒΆ";
     return 0;
 }
