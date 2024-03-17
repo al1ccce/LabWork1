@@ -1,13 +1,13 @@
-?#include<string> 
+я╗┐#include<string>
 #include <iostream> 
 #include <Windows.h> 
 using namespace std;
 int vowelCount(string str) {
     int kolCount = 0;
-    // Список гласных
-    string lettersLower = { 'a','e','u','o','i','y','а','е','ё','и','у','о','э','ю','я','ы' };
-    string lettersUp = { 'А','Е','Ё','И','У','О','Э','Ю','Я','Ы','A','E','U','O','I','Y' }; 
-    // Цикл поиска гласных
+    // ╨б╨┐╨╕╤Б╨╛╨║ ╨│╨╗╨░╤Б╨╜╤Л╤Е
+    string lettersLower = { 'a','e','u','o','i','y','╨░','╨╡','╤С','╨╕','╤Г','╨╛','╤Н','╤О','╤П','╤Л' };
+    string lettersUp = { '╨Р','╨Х','╨Б','╨Ш','╨г','╨Ю','╨н','╨о','╨п','╨л','A','E','U','O','I','Y' };
+    // ╨ж╨╕╨║╨╗ ╨┐╨╛╨╕╤Б╨║╨░ ╨│╨╗╨░╤Б╨╜╤Л╤Е
     for (int i = 0; i < str.length(); i++) {
         for (int j = 0; j < lettersUp.length(); j++) {
             if (str[i] == lettersLower[j] || str[i] == lettersUp[j]) {
@@ -20,14 +20,14 @@ int vowelCount(string str) {
 }
 int main()
 {
-    // Подключение русского языка
+    // ╨Я╨╛╨┤╨║╨╗╤О╤З╨╡╨╜╨╕╨╡ ╤А╤Г╤Б╤Б╨║╨╛╨│╨╛ ╤П╨╖╤Л╨║╨░
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     string str = "";
-    cout << "Введите строкy: " << endl;
-    // Ввод строки 
+    cout << "╨Т╨▓╨╡╨┤╨╕╤В╨╡ ╤Б╤В╤А╨╛╨║y: " << endl;
+    // ╨Т╨▓╨╛╨┤ ╤Б╤В╤А╨╛╨║╨╕ 
     getline(cin, str);
     int kolCount = vowelCount(str);
-    cout << "В строке " << kolCount << " гласных букв";
+    cout << "╨Т ╤Б╤В╤А╨╛╨║╨╡ " << kolCount << " ╨│╨╗╨░╤Б╨╜╤Л╤Е ╨▒╤Г╨║╨▓";
     return 0;
 }
