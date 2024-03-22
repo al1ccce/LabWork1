@@ -1,11 +1,10 @@
-// подключение заголовочных файлов
+// РїРѕРґРєР»СЋС‡РµРЅРёРµ Р·Р°РіРѕР»РѕРІРѕС‡РЅС‹С… С„Р°Р№Р»РѕРІ
 #include<iostream>
 #include<string>
-#include<locale>
 #include<Windows.h>
-// пространство имен std
+// РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РёРјРµРЅ
 using namespace std;
-// функция изменения регистра
+// function of changing case
 void ChangingCase(string ss) { 
 	cout << "To lower case: ";
 	for (int i = 0; i < ss.length(); i++) {
@@ -20,14 +19,13 @@ void ChangingCase(string ss) {
 }
 
 int main() {
-	// задаем кодировку консоли
+	// СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РєРѕРґРёСЂРѕРІРєСѓ РєРѕРЅСЃРѕР»Рё
 	SetConsoleCP(1251); 
 	SetConsoleOutputCP(1251);
-	// локализация Ру
-	locale ru{ "ru_RU.UTF-8" }; 
+	// new comment
 	string ss = "";
 	cout << "Enter the string: ";
-	// ввод строки с сохранением пробела
+	// РІРІРѕРґ via getline, С‡С‚РѕР±С‹ СѓС‡РёС‚С‹РІР°Р»СЃСЏ РїСЂРѕР±РµР»
 	getline(cin, ss); 
 	ChangingCase(ss);
 	return 0;
