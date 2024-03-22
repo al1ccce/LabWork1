@@ -4,6 +4,17 @@
 using namespace std;
 
 //Функция проверки строки на палиндром
+string delSym(string str, char sym){
+	for (int i = 0; i < str.length(); i++) {
+		if (str[i]==sym){
+			for (int j = i; j < str.length()-1; j++) {
+				str[j]=str[j+1];
+			}
+			str.pop_back();
+		}
+	}
+	return str;
+}
 int isPali(string str) {
 	//Сравнение i-ых элементов с начала и с конца строки
 	for (int i = 0; i < str.length() / 2; i++) {
@@ -19,14 +30,14 @@ int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	//Ввод строки
-	cout << "Введите строку" << endl;
+	cout << "Enter string" << endl;
 	string str = "";
 	getline(cin, str);
+	str=delSym(str, ' ');
 	//Вывод результата проверки
 	if (isPali(str)) {
-		cout << "Строка является палиндромом";
+		cout << "True";
 	} else {
-		cout << "Строка не является палиндромом";
+		cout << "False";
 	}
 }
-//Конец
